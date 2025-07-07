@@ -5,74 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>25. 07. 08 18:00 사직야구장</title>
   <style>
-  body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f5f5f5;
-  }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
 
-  .container {
-    max-width: 500px;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-  }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
 
-  /* ✅ 제목 배경 이미지 */
-  .title-box {
-    position: relative;
-    text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    color: white;
-    background-image: url('title-background.jpg'); /* 배경 이미지 파일명 */
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-  }
+    /* ✅ 제목 박스에만 배경 이미지 */
+    .title-box {
+      position: relative;
+      text-align: center;
+      padding: 40px 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      color: white;
+      background-image: url('title-background.jpg'); /* 이미지 파일명 */
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
 
-  /* ✅ 어두운 반투명 오버레이 */
-  .title-box::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.45); /* 투명도 조절 가능 */
-    z-index: 0;
-    border-radius: 12px;
-  }
+    .title-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.45); /* ✅ 투명도 조절 가능 */
+      z-index: 0;
+      border-radius: 12px;
+    }
 
-  .title-box h1 {
-    position: relative;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    z-index: 1;
-    margin: 0;
-  }
-</style>
+    .title-box h1 {
+      position: relative;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      z-index: 1;
+      margin: 0;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px;
+      background: #ddd;
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .tab.active {
+      background: #007bff;
+      color: white;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    .link-box {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .seat {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .url {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      word-wrap: break-word;
+    }
+
+    .copy-btn {
+      background: #333;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      color: white;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .copy-btn:active {
+      background: #000;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <!-- ✅ 배경 이미지 들어가는 제목 영역 -->
+    <!-- ✅ 제목 영역 -->
     <div class="title-box">
       <h1>
-        25/07/08 18:00<br>
+        25. 07. 08 18:00<br>
         사직야구장<br>
-        롯데 VS 두산 입장권 링크
+        롯데 VS 두산 입장권
       </h1>
     </div>
 
+    <!-- ✅ 탭 메뉴 -->
     <div class="tabs">
       <div class="tab active" onclick="showTab('individual')">개별 복사</div>
       <div class="tab" onclick="showTab('combined')">통합 복사</div>
     </div>
 
-    <!-- 개별 복사 -->
+    <!-- ✅ 개별 복사 영역 -->
     <div class="content active" id="individual">
-      <!-- 링크 박스들 -->
+      <!-- 8개의 좌석 링크 -->
       <div class="link-box">
         <div class="seat">051블럭 9열 21번</div>
         <div class="url">https://example.com/1</div>
@@ -115,7 +175,7 @@
       </div>
     </div>
 
-    <!-- 통합 복사 -->
+    <!-- ✅ 통합 복사 영역 -->
     <div class="content" id="combined">
       <div class="link-box">
         <div style="white-space: pre-wrap; font-size: 0.9rem; margin-bottom: 12px;">
@@ -157,7 +217,6 @@ https://example.com/8
     }
 
     function copyToClipboard(text) {
-      // 클립보드에 복사
       navigator.clipboard.writeText(text).then(() => {
         alert("복사되었습니다!");
       }).catch(err => {
