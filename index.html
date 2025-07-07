@@ -66,7 +66,7 @@
     }
 
     .tab.active {
-      background: #007bff;
+      background: rgb(108, 172, 228);
       color: white;
     }
 
@@ -98,17 +98,24 @@
     }
 
     .copy-btn {
-      background: #333;
+      background: rgb(4, 30, 66);
       border: none;
       padding: 8px 12px;
       border-radius: 5px;
       color: white;
       font-size: 0.85rem;
       cursor: pointer;
+      margin-left: 5px;
     }
 
-    .copy-btn:active {
-      background: #000;
+    .open-btn {
+      background: rgb(208, 15, 49);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      color: white;
+      font-size: 0.85rem;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -128,51 +135,32 @@
     </div>
 
     <div class="content active" id="individual">
-      <div class="link-box">
-        <div class="link-box">
-        <div class="seat">051블럭 9열 15번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950001<br>[비밀번호: 8249]</div>
-        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 15번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950001\n[비밀번호: 8249]`)">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 16번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950002<br>[비밀번호: 0664]</div>
-        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 16번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950002\n[비밀번호: 0664]`)">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 17번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950003<br>[비밀번호: 9920]</div>
-        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 17번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950003\n[비밀번호: 9920]`)">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 18번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950004<br>[비밀번호: 9085]</div>
-        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 18번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950004\n[비밀번호: 9085]`)">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 19번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950005<br>[비밀번호: 0543]</div>
-        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 19번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950005\n[비밀번호: 0543]`)">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 20번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950006<br></ㅠㄱ>[비밀번호: 9533]</div>
-        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 20번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950006\b[비밀번호: 9533]`)">복사하기</button>
-      </div>
-        <div class="seat">051블럭 9열 21번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001<br>[비밀번호: 4770]</div>
-        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 21번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001\n[비밀번호: 4770]`)">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 22번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740002<br>[비밀번호: 1351]</div>
-        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 22번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740002\n[비밀번호: 1351]`)">복사하기</button>
-      </div>
+      <!-- 15번에서 22번까지 -->
+      <script>
+        const seats = [
+          { no: 15, ticket: '0013950001', pw: '8249' },
+          { no: 16, ticket: '0013950002', pw: '0664' },
+          { no: 17, ticket: '0013950003', pw: '9920' },
+          { no: 18, ticket: '0013950004', pw: '9085' },
+          { no: 19, ticket: '0013950005', pw: '0543' },
+          { no: 20, ticket: '0013950006', pw: '9533' },
+          { no: 21, ticket: '0013740001', pw: '4770' },
+          { no: 22, ticket: '0013740002', pw: '1351' },
+        ];
+        document.write(seats.map(s => `
+          <div class="link-box">
+            <div class="seat">051블럭 9열 ${s.no}번</div>
+            <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}<br>[비밀번호: ${s.pw}]</div>
+            <button class="open-btn" onclick="window.open('https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}', '_blank')">링크열기</button>
+            <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 ${s.no}번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}\n[비밀번호: ${s.pw}]`)">복사하기</button>
+          </div>
+        `).join(''));
+      </script>
     </div>
 
     <div class="content" id="combined">
-  <div class="link-box">
-    <div style="white-space: pre-wrap; font-size: 0.9rem; margin-bottom: 12px;">
+      <div class="link-box">
+        <div style="white-space: pre-wrap; font-size: 0.9rem; margin-bottom: 12px;">
 051블럭 9열 15번  
 https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950001  
 [비밀번호: 8249]
@@ -204,11 +192,11 @@ https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=202507071100205910
 051블럭 9열 22번  
 https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740002  
 [비밀번호: 1351]
-    </div>
-    <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 15번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950001\n[비밀번호: 8249]\n\n051블럭 9열 16번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950002\n[비밀번호: 0664]\n\n051블럭 9열 17번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950003\n[비밀번호: 9920]\n\n051블럭 9열 18번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950004\n[비밀번호: 9085]\n\n051블럭 9열 19번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950005\n[비밀번호: 0543]\n\n051블럭 9열 20번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950006\n[비밀번호: 9533]\n\n051블럭 9열 21번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001\n[비밀번호: 4770]\n\n051블럭 9열 22번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740002\n[비밀번호: 1351]`)">전체 복사하기</button>
+        </div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 15번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950001\n[비밀번호: 8249]\n\n051블럭 9열 16번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950002\n[비밀번호: 0664]\n\n051블럭 9열 17번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950003\n[비밀번호: 9920]\n\n051블럭 9열 18번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950004\n[비밀번호: 9085]\n\n051블럭 9열 19번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950005\n[비밀번호: 0543]\n\n051블럭 9열 20번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950006\n[비밀번호: 9533]\n\n051블럭 9열 21번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001\n[비밀번호: 4770]\n\n051블럭 9열 22번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740002\n[비밀번호: 1351]`)">전체 복사하기</button>
+      </div>
     </div>
   </div>
-</div>
 
   <script>
     function showTab(id) {
