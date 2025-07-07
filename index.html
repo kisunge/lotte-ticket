@@ -5,94 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>25. 07. 08 18:00 사직야구장</title>
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5 url("background.jpg") no-repeat center center fixed;
-      background-size: cover;
-    }
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+  }
 
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
+  .container {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
 
-    h1 {
-      font-size: 1.3rem;
-      text-align: center;
-      margin-bottom: 1rem;
-      line-height: 1.4;
-    }
+  /* ✅ 제목 배경 이미지 */
+  .title-box {
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    color: white;
+    background-image: url('title-background.jpg'); /* 배경 이미지 파일명 */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
 
-    .tabs {
-      display: flex;
-      margin-bottom: 20px;
-    }
+  /* ✅ 어두운 반투명 오버레이 */
+  .title-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.45); /* 투명도 조절 가능 */
+    z-index: 0;
+    border-radius: 12px;
+  }
 
-    .tab {
-      flex: 1;
-      padding: 10px;
-      background: #ddd;
-      text-align: center;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .tab.active {
-      background: #007bff;
-      color: white;
-    }
-
-    .content {
-      display: none;
-    }
-
-    .content.active {
-      display: block;
-    }
-
-    .link-box {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-
-    .seat {
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .url {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-      word-wrap: break-word;
-    }
-
-    .copy-btn {
-      background: #333;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      color: white;
-      font-size: 0.85rem;
-      cursor: pointer;
-    }
-
-    .copy-btn:active {
-      background: #000;
-    }
-  </style>
+  .title-box h1 {
+    position: relative;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    z-index: 1;
+    margin: 0;
+  }
+</style>
 </head>
 <body>
   <div class="container">
-    <h1>25. 07. 08 18:00<br>사직야구장<br>롯데 VS 두산 입장권</h1>
+    <!-- ✅ 배경 이미지 들어가는 제목 영역 -->
+    <div class="title-box">
+      <h1>
+        25/07/08 18:00<br>
+        사직야구장<br>
+        롯데 VS 두산 입장권 링크
+      </h1>
+    </div>
 
     <div class="tabs">
       <div class="tab active" onclick="showTab('individual')">개별 복사</div>
