@@ -135,28 +135,32 @@
     </div>
 
     <div class="content active" id="individual">
-      <!-- 15번에서 22번까지 -->
-      <script>
-        const seats = [
-          { no: 15, ticket: '0013950001', pw: '8249' },
-          { no: 16, ticket: '0013950002', pw: '0664' },
-          { no: 17, ticket: '0013950003', pw: '9920' },
-          { no: 18, ticket: '0013950004', pw: '9085' },
-          { no: 19, ticket: '0013950005', pw: '0543' },
-          { no: 20, ticket: '0013950006', pw: '9533' },
-          { no: 21, ticket: '0013740001', pw: '4770' },
-          { no: 22, ticket: '0013740002', pw: '1351' },
-        ];
-        document.write(seats.map(s => `
-          <div class="link-box">
-            <div class="seat">051블럭 9열 ${s.no}번</div>
-            <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}<br>[비밀번호: ${s.pw}]</div>
-            <button class="open-btn" onclick="window.open('https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}', '_blank')">링크열기</button>
-            <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 ${s.no}번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}\n[비밀번호: ${s.pw}]`)">복사하기</button>
-          </div>
-        `).join(''));
-      </script>
-    </div>
+  <div id="seat-container"></div>
+
+  <script>
+    const seats = [
+      { no: 15, ticket: '0013950001', pw: '8249' },
+      { no: 16, ticket: '0013950002', pw: '0664' },
+      { no: 17, ticket: '0013950003', pw: '9920' },
+      { no: 18, ticket: '0013950004', pw: '9085' },
+      { no: 19, ticket: '0013950005', pw: '0543' },
+      { no: 20, ticket: '0013950006', pw: '9533' },
+      { no: 21, ticket: '0013740001', pw: '4770' },
+      { no: 22, ticket: '0013740002', pw: '1351' },
+    ];
+
+    const seatHTML = seats.map(s => `
+      <div class="link-box">
+        <div class="seat">051블럭 9열 ${s.no}번</div>
+        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}<br>[비밀번호: ${s.pw}]</div>
+        <button class="open-btn" onclick="window.open('https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}', '_blank')">링크열기</button>
+        <button class="copy-btn" onclick="copyToClipboard(\`051블럭 9열 ${s.no}번\\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}\\n[비밀번호: ${s.pw}]\`)">복사하기</button>
+      </div>
+    `).join('');
+
+    document.getElementById('seat-container').innerHTML = seatHTML;
+  </script>
+</div>
 
     <div class="content" id="combined">
       <div class="link-box">
