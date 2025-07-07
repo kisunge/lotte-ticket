@@ -75,8 +75,8 @@
       word-wrap: break-word;
     }
 
-    .share-btn {
-      background: #25d366;
+    .copy-btn {
+      background: #333;
       border: none;
       padding: 8px 12px;
       border-radius: 5px;
@@ -85,8 +85,8 @@
       cursor: pointer;
     }
 
-    .share-btn:active {
-      background: #1db954;
+    .copy-btn:active {
+      background: #000;
     }
   </style>
 </head>
@@ -95,85 +95,84 @@
     <h1>25. 07. 08 18:00<br>사직야구장<br>롯데 VS 두산 입장권</h1>
 
     <div class="tabs">
-      <div class="tab active" onclick="showTab('individual')">개별 공유</div>
-      <div class="tab" onclick="showTab('combined')">통합 공유</div>
+      <div class="tab active" onclick="showTab('individual')">개별 복사</div>
+      <div class="tab" onclick="showTab('combined')">통합 복사</div>
     </div>
 
-    <!-- 개별 공유 -->
+    <!-- 개별 복사 -->
     <div class="content active" id="individual">
       <!-- 링크 박스들 -->
       <div class="link-box">
         <div class="seat">051블럭 9열 21번</div>
         <div class="url">https://example.com/1</div>
-        <button class="share-btn" onclick="share('051블럭 9열 21번\nhttps://example.com/1')">공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 21번\nhttps://example.com/1')">복사하기</button>
       </div>
       <div class="link-box">
         <div class="seat">051블럭 9열 22번</div>
         <div class="url">https://example.com/2</div>
-        <button class="share-btn" onclick="share('051블럭 9열 22번\nhttps://example.com/2')">공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 22번\nhttps://example.com/2')">복사하기</button>
       </div>
       <div class="link-box">
         <div class="seat">051블럭 9열 23번</div>
         <div class="url">https://example.com/3</div>
-        <button class="share-btn" onclick="share('051블럭 9열 23번\nhttps://example.com/3')">공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 23번\nhttps://example.com/3')">복사하기</button>
       </div>
       <div class="link-box">
         <div class="seat">051블럭 9열 24번</div>
         <div class="url">https://example.com/4</div>
-        <button class="share-btn" onclick="share('051블럭 9열 24번\nhttps://example.com/4')">공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 24번\nhttps://example.com/4')">복사하기</button>
       </div>
       <div class="link-box">
         <div class="seat">051블럭 9열 25번</div>
         <div class="url">https://example.com/5</div>
-        <button class="share-btn" onclick="share('051블럭 9열 25번\nhttps://example.com/5')">공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 25번\nhttps://example.com/5')">복사하기</button>
       </div>
       <div class="link-box">
         <div class="seat">051블럭 9열 26번</div>
         <div class="url">https://example.com/6</div>
-        <button class="share-btn" onclick="share('051블럭 9열 26번\nhttps://example.com/6')">공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 26번\nhttps://example.com/6')">복사하기</button>
       </div>
       <div class="link-box">
         <div class="seat">051블럭 9열 27번</div>
         <div class="url">https://example.com/7</div>
-        <button class="share-btn" onclick="share('051블럭 9열 27번\nhttps://example.com/7')">공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 27번\nhttps://example.com/7')">복사하기</button>
       </div>
       <div class="link-box">
         <div class="seat">051블럭 9열 28번</div>
         <div class="url">https://example.com/8</div>
-        <button class="share-btn" onclick="share('051블럭 9열 28번\nhttps://example.com/8')">공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 28번\nhttps://example.com/8')">복사하기</button>
       </div>
     </div>
 
-    <!-- 통합 공유 -->
+    <!-- 통합 복사 -->
     <div class="content" id="combined">
       <div class="link-box">
         <div style="white-space: pre-wrap; font-size: 0.9rem; margin-bottom: 12px;">
-051블럭 9열 21번
+051블럭 9열 21번  
 https://example.com/1
 
-051블럭 9열 22번
+051블럭 9열 22번  
 https://example.com/2
 
-051블럭 9열 23번
+051블럭 9열 23번  
 https://example.com/3
 
-051블럭 9열 24번
+051블럭 9열 24번  
 https://example.com/4
 
-051블럭 9열 25번
+051블럭 9열 25번  
 https://example.com/5
 
-051블럭 9열 26번
+051블럭 9열 26번  
 https://example.com/6
 
-051블럭 9열 27번
+051블럭 9열 27번  
 https://example.com/7
 
-051블럭 9열 28번
+051블럭 9열 28번  
 https://example.com/8
         </div>
-        <button class="share-btn" onclick="share(
-`051블럭 9열 21번\nhttps://example.com/1\n\n051블럭 9열 22번\nhttps://example.com/2\n\n051블럭 9열 23번\nhttps://example.com/3\n\n051블럭 9열 24번\nhttps://example.com/4\n\n051블럭 9열 25번\nhttps://example.com/5\n\n051블럭 9열 26번\nhttps://example.com/6\n\n051블럭 9열 27번\nhttps://example.com/7\n\n051블럭 9열 28번\nhttps://example.com/8`)">전체 공유하기</button>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 21번\nhttps://example.com/1\n\n051블럭 9열 22번\nhttps://example.com/2\n\n051블럭 9열 23번\nhttps://example.com/3\n\n051블럭 9열 24번\nhttps://example.com/4\n\n051블럭 9열 25번\nhttps://example.com/5\n\n051블럭 9열 26번\nhttps://example.com/6\n\n051블럭 9열 27번\nhttps://example.com/7\n\n051블럭 9열 28번\nhttps://example.com/8`)">전체 복사하기</button>
       </div>
     </div>
   </div>
@@ -186,18 +185,14 @@ https://example.com/8
       document.getElementById(id).classList.add('active');
     }
 
-    function share(text) {
-      if (navigator.share) {
-        navigator.share({
-          title: '롯데 vs 두산 입장권',
-          text: text,
-          url: window.location.href
-        }).catch(err => {
-          alert("공유가 취소되었거나 실패했습니다.");
-        });
-      } else {
-        alert("이 브라우저는 공유를 지원하지 않습니다.");
-      }
+    function copyToClipboard(text) {
+      // 클립보드에 복사
+      navigator.clipboard.writeText(text).then(() => {
+        alert("복사되었습니다!");
+      }).catch(err => {
+        alert("복사에 실패했습니다.");
+        console.error(err);
+      });
     }
   </script>
 </body>
