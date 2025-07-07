@@ -151,7 +151,7 @@
 
     const seatHTML = seats.map(s => `
       <div class="link-box">
-        <div class="seat">051블럭 9열 ${s.no}번</div>
+        <div class="seat">중앙상단 051블럭 9열 ${s.no}번</div>
         <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}<br>[비밀번호: ${s.pw}]</div>
         <button class="open-btn" onclick="window.open('https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}', '_blank')">링크열기</button>
         <button class="copy-btn" onclick="copyToClipboard(\`중앙상단 051블럭 9열 ${s.no}번\\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=20250707110020591000${s.ticket}\\n[비밀번호: ${s.pw}]\`)">복사하기</button>
