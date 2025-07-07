@@ -21,7 +21,6 @@
       margin-top: 20px;
     }
 
-    /* ✅ 제목 박스에만 배경 이미지 */
     .title-box {
       position: relative;
       text-align: center;
@@ -29,7 +28,7 @@
       margin-bottom: 20px;
       border-radius: 12px;
       color: white;
-      background-image: url('title-background.jpg'); /* 이미지 파일명 */
+      background-image: url('title-background.jpg');
       background-size: cover;
       background-position: center;
       overflow: hidden;
@@ -39,7 +38,7 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.25); /* ✅ 투명도 조절 가능 */
+      background: rgba(0, 0, 0, 0.25);
       z-index: 0;
       border-radius: 12px;
     }
@@ -115,7 +114,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- ✅ 제목 영역 -->
     <div class="title-box">
       <h1>
         25.07.08 18:00<br>
@@ -124,62 +122,55 @@
       </h1>
     </div>
 
-    <!-- ✅ 탭 메뉴 -->
     <div class="tabs">
       <div class="tab active" onclick="showTab('individual')">개별 복사</div>
       <div class="tab" onclick="showTab('combined')">통합 복사</div>
     </div>
 
-    <!-- ✅ 개별 복사 영역 -->
     <div class="content active" id="individual">
-      <!-- 8개의 좌석 링크 -->
       <div class="link-box">
+        <div class="link-box">
+        <div class="seat">051블럭 9열 15번</div>
+        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950001<br>[비밀번호: 8249]</div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 15번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013950001
+ \n[비밀번호: 8249]`)">복사하기</button>
+      </div>
+      <div class="link-box">
+        <div class="seat">051블럭 9열 16번</div>
+        <div class="url">https://example.com/4</div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 16번\nhttps://example.com/4`)">복사하기</button>
+      </div>
+      <div class="link-box">
+        <div class="seat">051블럭 9열 17번</div>
+        <div class="url">https://example.com/5</div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 17번\nhttps://example.com/5`)">복사하기</button>
+      </div>
+      <div class="link-box">
+        <div class="seat">051블럭 9열 18번</div>
+        <div class="url">https://example.com/6</div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 18번\nhttps://example.com/6`)">복사하기</button>
+      </div>
+      <div class="link-box">
+        <div class="seat">051블럭 9열 19번</div>
+        <div class="url">https://example.com/7</div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 19번\nhttps://example.com/7`)">복사하기</button>
+      </div>
+      <div class="link-box">
+        <div class="seat">051블럭 9열 20번</div>
+        <div class="url">https://example.com/8</div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 20번\nhttps://example.com/8`)">복사하기</button>
+      </div>
         <div class="seat">051블럭 9열 21번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001
- <br>[비밀번호: 4770]</div>
-        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 21번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001
- [비밀번호: 4770]')">복사하기</button>
+        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001<br>[비밀번호: 4770]</div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 21번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001\n[비밀번호: 4770]`)">복사하기</button>
       </div>
       <div class="link-box">
         <div class="seat">051블럭 9열 22번</div>
-        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001
- <br>[비밀번호: 4770]</div>
-        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 22번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001
- [비밀번호: 4770]')">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 23번</div>
-        <div class="url">https://example.com/3</div>
-        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 23번\nhttps://example.com/3')">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 24번</div>
-        <div class="url">https://example.com/4</div>
-        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 24번\nhttps://example.com/4')">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 25번</div>
-        <div class="url">https://example.com/5</div>
-        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 25번\nhttps://example.com/5')">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 26번</div>
-        <div class="url">https://example.com/6</div>
-        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 26번\nhttps://example.com/6')">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 27번</div>
-        <div class="url">https://example.com/7</div>
-        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 27번\nhttps://example.com/7')">복사하기</button>
-      </div>
-      <div class="link-box">
-        <div class="seat">051블럭 9열 28번</div>
-        <div class="url">https://example.com/8</div>
-        <button class="copy-btn" onclick="copyToClipboard('051블럭 9열 28번\nhttps://example.com/8')">복사하기</button>
+        <div class="url">https://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001<br>[비밀번호: 4770]</div>
+        <button class="copy-btn" onclick="copyToClipboard(`051블럭 9열 22번\nhttps://app.giantsclub.com:8090/m3/receive_ticket.do?ticketNo=2025070711002059100013740001\n[비밀번호: 4770]`)">복사하기</button>
       </div>
     </div>
 
-    <!-- ✅ 통합 복사 영역 -->
     <div class="content" id="combined">
       <div class="link-box">
         <div style="white-space: pre-wrap; font-size: 0.9rem; margin-bottom: 12px;">
@@ -216,8 +207,8 @@ https://example.com/8
     function showTab(id) {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
-      document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
       document.getElementById(id).classList.add('active');
+      document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
     }
 
     function copyToClipboard(text) {
